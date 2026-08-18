@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="hero">
+  <p class="eyebrow">404</p>
+  <h1>That page is not here</h1>
+  <div class="bar"></div>
+  <p class="lede">Every address this site had on WordPress still works, so if you followed an old
+  link it should have resolved. If it did not, the content is most likely in the blog.</p>
+  <div class="actions">
+    <a class="btn primary" href="{{ "posts/" | relURL }}">Go to the blog</a>
+    <a class="btn" href="{{ "" | relURL }}">Home</a>
+  </div>
+</div>
+{{ end }}

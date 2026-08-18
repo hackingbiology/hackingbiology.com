@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="hero">
+  {{- with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class="bar"></div>
+  {{- with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  {{ .Content }}
+</div>
+
+{{- $pages := .Pages.ByDate.Reverse }}
+{{- if $pages }}
+<ul class="entries">
+  {{- range $pages }}
+  <li>
+    <p class="entry-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+    <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{- with (.Description | default (.Summary | plainify | truncate 190)) }}
+    <p class="entry-summary">{{ . }}</p>
+    {{- end }}
+  </li>
+  {{- end }}
+</ul>
+{{- else }}
+<p class="lede">Nothing published here yet.</p>
+{{- end }}
+{{ end }}

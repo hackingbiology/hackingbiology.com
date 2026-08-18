@@ -1,0 +1,19 @@
+{{/* Static, typographic navigation — the same register as biohack.it:
+     lockup on the left, uppercase Jost links on the right, no dropdowns. */}}
+<header class="site-header">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="{{ "" | relURL }}">
+        {{ partial "mark.html" (dict "class" "navmark") }}
+        <span>Hacking Biology<span class="tagline">Foundation</span></span>
+      </a>
+      <span class="nav-links">
+        {{- range site.Menus.main }}
+          {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+          <a href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{- end }}
+        <a class="ext" href="https://biohack.it" rel="noopener">Biohack.it</a>
+      </span>
+    </nav>
+  </div>
+</header>

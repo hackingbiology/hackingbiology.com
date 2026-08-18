@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="page">
+  {{- if .Params.eyebrow }}<p class="eyebrow">{{ .Params.eyebrow }}</p>{{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class="bar short"></div>
+  {{- if and .IsPage (ne .Section "") }}
+  <p class="page-meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+    {{- with .Lastmod }}{{ if gt (sub .Unix $.Date.Unix) 86400 }} · updated {{ .Format "2 January 2006" }}{{ end }}{{ end }}
+    {{- if .ReadingTime }} · {{ .ReadingTime }} min read{{ end }}
+  </p>
+  {{- end }}
+  {{- with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+
+  {{ .Content }}
+
+  {{- if eq .Section "posts" }}
+  <p class="notice">This is a working note from a personal research project, not medical advice.
+  Protocols described here were run on one person and measured; nothing on this site is a
+  recommendation to do the same.</p>
+  {{- end }}
+
+  {{- if .IsPage }}
+  <nav class="prevnext" aria-label="More in this section">
+    <span>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>{{ end }}</span>
+    <span>{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>{{ end }}</span>
+  </nav>
+  {{- end }}
+</article>
+{{ end }}

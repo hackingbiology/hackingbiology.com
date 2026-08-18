@@ -1,87 +1,47 @@
 # Built output goes to /docs — that is where GitHub Pages serves from.
 publishDir = "docs"
 timeZone = "Europe/Rome"
+title = "Hacking Biology"
+
+# Final destination. The GitHub Action overrides it with --baseURL while the
+# site is previewed on github.io, so links stay correct in both places.
+baseURL = "https://hackingbiology.com/"
 
 # Image and link paths inside the migrated content are root-relative
 # (/wp-content/uploads/...). canonifyURLs rewrites them against baseURL, so they
 # resolve both on the github.io preview (which sits under a subpath) and on the
 # final custom domain. Switching domain is then just a rebuild.
 canonifyURLs = true
-title = "Hacking Biology"
 
-# -- Site Configuration --
-# Refer to the theme docs for more details about each of these parameters.
-# https://blowfish.page/docs/getting-started/
-
-theme = "blowfish"
-# Final destination. The GitHub Action overrides it with --baseURL while the
-# site is previewed on github.io, so links stay correct in both places.
-baseURL = "https://hackingbiology.com/"
 defaultContentLanguage = "en"
-
-# pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
-
 enableRobotsTXT = true
-summaryLength = 0
+enableEmoji = true
+summaryLength = 30
 
 buildDrafts = false
 buildFuture = false
 
-enableEmoji = true
-
-# googleAnalytics = "G-XXXXXXXXX"
-
 [pagination]
-  pagerSize = 20
-
-[imaging]
-  anchor = 'Center'
+  pagerSize = 30
 
 [taxonomies]
   tag = "tags"
-  category = "categories"
-  author = "authors"
-  series = "series"
 
 [sitemap]
-  changefreq = 'daily'
-  filename = 'sitemap.xml'
+  changefreq = "weekly"
+  filename = "sitemap.xml"
   priority = 0.5
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
 
-[related]
-  threshold = 0
-  toLower = false
-
-    [[related.indices]]
-        name = "tags"
-        weight = 100
-
-    [[related.indices]]
-        name = "categories"
-        weight = 100
-
-    [[related.indices]]
-        name = "series"
-        weight = 50
-
-    [[related.indices]]
-        name = "authors"
-        weight = 20
-
-    [[related.indices]]
-        name = "date"
-        weight = 10
-
-    [[related.indices]]
-      applyFilter = false
-      name = 'fragmentrefs'
-      type = 'fragments'
-      weight = 10
+[services]
+  [services.rss]
+    limit = 30
 
 # URL preservation: every post keeps the exact address it had on WordPress,
 # e.g. /2024/07/20/hbot-protocol-protoco/ . Do not change this.
 [permalinks]
   posts = "/:year/:month/:day/:slug/"
+  news = "/news/:slug/"

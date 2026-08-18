@@ -1,12 +1,14 @@
 ---
 title: "Hacking Biology"
-description: "A Data Driven Applied Aging Research Project"
+description: "The non-profit foundation stewarding biohack.it — open infrastructure for longevity research, kept open by design."
 aliases:
   - /home/        # the old WordPress page
 ---
 
-Hacking Biology is an applied research project that brings a **Do It Yourself**
-experimental approach to aging: protocols are run on one body, measured with
-biomarkers, and written down — including the parts that did not work.
+**Hacking Biology** is a non-profit foundation. It exists to steward
+[biohack.it](https://biohack.it) — the open platform where biohackers document what they take
+and do, measure the effect with biomarkers, and publish protocol and results together.
 
-Everything here is a working note, not medical advice.
+A tool can be forked, sold, or captured. A steward with a mission lock is what turns an open
+project into a promise that holds: the software stays open, the data stays the person's own, and
+safety is never traded for growth.

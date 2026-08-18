@@ -1,0 +1,98 @@
+{{ define "main" }}
+<div class="hero">
+  <p class="eyebrow">Non-profit foundation · Applied longevity research</p>
+  <h1>{{ .Title }}</h1>
+  <div class="bar"></div>
+  {{- with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  <div class="actions">
+    <a class="btn primary" href="{{ "foundation/" | relURL }}">What the Foundation guarantees</a>
+    <a class="btn" href="https://biohack.it" rel="noopener">See biohack.it</a>
+  </div>
+</div>
+
+{{/* --- Fabio: the person behind it. Photographs, then straight to About. --- */}}
+<section class="block">
+  <h2>Started by Fabio Pietrosanti</h2>
+  <p class="measure">Hacking Biology was started by <b>Fabio Pietrosanti</b> — a hacker and
+  entrepreneur who has spent twenty-five years building things people have to be able to trust,
+  and who now runs longevity protocols on himself and publishes the measurements, good and bad.
+  The Foundation is the institutional form of that habit: do the experiment, show the numbers,
+  keep it open.</p>
+
+  <div class="portraits">
+    {{- $shots := site.Params.portraits }}
+    {{- if $shots }}
+      {{- range $shots }}
+      <figure class="portrait">
+        <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" width="600" height="800">
+        {{- with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{- end }}
+    {{- else }}
+      <div class="portrait placeholder">Photo slot 1 — waiting on the picture</div>
+      <div class="portrait placeholder">Photo slot 2 — waiting on the picture</div>
+    {{- end }}
+  </div>
+  <p><a href="{{ "about/" | relURL }}">About Fabio &rarr;</a></p>
+</section>
+
+{{/* --- The software it stewards --- */}}
+<section class="block">
+  <h2>The software: biohack.it</h2>
+  <div class="cols">
+    <div class="card">
+      <h3><a href="https://biohack.it" rel="noopener">biohack.it</a></h3>
+      <p>The open-source platform the Foundation stewards. Biohackers document a protocol in
+      structured form — what they take or do, dose, timing, cycles — measure its effect and its
+      safety through biomarkers, and share protocol and results publicly.</p>
+      <p><a href="https://biohack.it" rel="noopener">biohack.it &rarr;</a></p>
+    </div>
+    <div class="card">
+      <h3><a href="{{ "foundation/" | relURL }}">The Foundation</a></h3>
+      <p>A tool can be forked, sold, or captured. A steward with a mission lock is what makes the
+      promise permanent: never commercial, open by code and by data, harm reduction first, and the
+      record belongs to the person it describes.</p>
+      <p><a href="{{ "foundation/" | relURL }}">What we guarantee &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+{{/* --- The blog, and what it is honestly about --- */}}
+<section class="block">
+  <h2>The blog</h2>
+  <p class="measure">A mix of <b>project and personal biohacking blog</b>: notes on HBOT,
+  rapamycin, epigenetic and biological-age measurement, senolytics and blood panels, written as
+  the experiments happen. As the organisation develops, the project side moves to the Foundation
+  and to biohack.it, and <b>this blog becomes purely personal</b>.</p>
+  {{- $posts := where site.RegularPages "Section" "posts" }}
+  {{- with first 4 ($posts.ByDate.Reverse) }}
+  <ul class="entries" style="margin-top:22px">
+    {{- range . }}
+    <li>
+      <p class="entry-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+      <h3 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
+  <p style="margin-top:18px"><a href="{{ "posts/" | relURL }}">All posts &rarr;</a></p>
+</section>
+
+{{/* --- News, kept deliberately small on the main page --- */}}
+{{- $news := where site.RegularPages "Section" "news" }}
+{{- with first 3 ($news.ByDate.Reverse) }}
+<section class="block">
+  <h2>News</h2>
+  <ul class="newsstrip">
+    {{- range . }}
+    <li>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{- end }}
+  </ul>
+  <p style="margin-top:16px"><a href="{{ "news/" | relURL }}">All news &rarr;</a></p>
+</section>
+{{- end }}
+{{ end }}

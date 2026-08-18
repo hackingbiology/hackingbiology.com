@@ -19,8 +19,16 @@ BACKUP = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
 fail, warn = [], []
 
 
-def built_path(url_path):
-    p = unquote(url_path).split("#")[0].split("?")[0].lstrip("/")
+def built_path(url_path, base=None):
+    """Resolve a URL reference to a file in docs/. `base` is the directory of the
+    page that contained the reference, needed for relative links."""
+    raw = unquote(url_path).split("#")[0].split("?")[0]
+    if not raw.startswith("/") and base:
+        cand = os.path.normpath(os.path.join(base, raw))
+        if os.path.isdir(cand):
+            return os.path.join(cand, "index.html")
+        return cand
+    p = raw.lstrip("/")
     # strip the project-pages prefix if the build used one
     if p.startswith("hackingbiology.com/"):
         p = p[len("hackingbiology.com/"):]
@@ -71,11 +79,11 @@ for f in pages:
             continue                                   # external link, left untouched by design
         if not sp.path or sp.path.startswith("//"):
             continue
-        refs.setdefault(sp.path, set()).add(os.path.relpath(f, DOCS))
+        refs.setdefault((sp.path, os.path.dirname(f)), set()).add(os.path.relpath(f, DOCS))
 
-for path, sources in sorted(refs.items()):
+for (path, base), sources in sorted(refs.items()):
     checked += 1
-    if not os.path.exists(built_path(path)):
+    if not os.path.exists(built_path(path, base)):
         kind = "immagine/file" if re.search(r"\.(png|jpe?g|gif|pdf|svg|webp)$", path, re.I) else "link"
         fail.append("%s rotto: %s  (in %s)" % (kind, path, ", ".join(sorted(sources)[:2])))
 

@@ -1,21 +1,4 @@
-disabled = false
-languageCode = "en"
+languageCode = "en-GB"
 languageName = "English"
 weight = 1
 title = "Hacking Biology"
-
-[params]
-  displayName = "EN"
-  isoCode = "en"
-  rtl = false
-  dateFormat = "2 January 2006"
-  description = "A Data Driven Applied Aging Research Project"
-  copyright = "Hacking Biology"
-
-[params.author]
-  name = "Hacking Biology"
-  headline = "A Data Driven Applied Aging Research Project"
-  bio = "Applied aging research, documented as it happens: protocols, biomarkers, and what the measurements actually say."
-  links = [
-    { rss = "/index.xml" },
-  ]
