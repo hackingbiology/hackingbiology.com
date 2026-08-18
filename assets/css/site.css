@@ -155,15 +155,23 @@ section.block:first-of-type { border-top: 0; padding-top: 0 }
 .card h3 { margin-top: 0 }
 .card p:last-child { margin-bottom: 0 }
 
-/* portraits — used only where a person is involved, never as decorative fill */
-.portraits { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 4px 0 20px }
-.portrait { margin: 0 }
-.portrait img { width: 100%; border-radius: 12px; display: block; box-shadow: var(--shadow) }
-.portrait figcaption { font-size: 13px; color: var(--faint); margin-top: 7px }
+/* portraits — used only where a person is involved, never as decorative fill.
+   They sit beside the text rather than under it: the copy has a reading measure of
+   its own, and full-width portraits of a 3:4 photograph eat a whole screen. */
+.person { display: grid; gap: 34px; grid-template-columns: minmax(0, 56ch) minmax(0, 1fr); align-items: start }
+.person h2 { margin-top: 0 }
+
+.portraits { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin: 0 }
+.portrait { margin: 0; min-width: 0 }
+.portrait img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 42%;
+  border-radius: 10px; display: block; box-shadow: var(--shadow);
+}
+.portrait figcaption { font-size: 12px; line-height: 1.45; color: var(--faint); margin-top: 6px }
 .portrait.placeholder {
-  border: 1px dashed var(--line-strong); border-radius: 12px; min-height: 190px;
+  border: 1px dashed var(--line-strong); border-radius: 10px; aspect-ratio: 3 / 4;
   display: flex; align-items: center; justify-content: center; text-align: center;
-  color: var(--faint); font-size: 13px; padding: 18px; background: var(--surface);
+  color: var(--faint); font-size: 12px; padding: 14px; background: var(--surface);
 }
 
 /* ---------------------------------------------------------------- lists */
@@ -205,6 +213,11 @@ article.page img { border-radius: 10px; margin: 8px 0 }
 .site-footer a { color: var(--muted) }
 .site-footer a:hover { color: var(--accent) }
 .colophon { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--faint) }
+
+@media (max-width: 860px) {
+  .person { grid-template-columns: 1fr; gap: 22px }
+  .portraits { max-width: 420px }
+}
 
 @media (max-width: 640px) {
   body { font-size: 16px }

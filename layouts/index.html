@@ -12,13 +12,15 @@
 </div>
 
 {{/* --- Fabio: the person behind it. Photographs, then straight to About. --- */}}
-<section class="block">
-  <h2>Started by Fabio Pietrosanti</h2>
-  <p class="measure">Hacking Biology was started by <b>Fabio Pietrosanti</b> — a hacker and
-  entrepreneur who has spent twenty-five years building things people have to be able to trust,
-  and who now runs longevity protocols on himself and publishes the measurements, good and bad.
-  The Foundation is the institutional form of that habit: do the experiment, show the numbers,
-  keep it open.</p>
+<section class="block person">
+  <div>
+    <h2>Started by Fabio Pietrosanti</h2>
+    <p>Hacking Biology was started by <b>Fabio Pietrosanti</b> — a hacker and entrepreneur who has
+    spent twenty-five years building things people have to be able to trust, and who now runs
+    longevity protocols on himself and publishes the measurements, good and bad. The Foundation is
+    the institutional form of that habit: do the experiment, show the numbers, keep it open.</p>
+    <p><a href="{{ "about/" | relURL }}">About Fabio &rarr;</a></p>
+  </div>
 
   <div class="portraits">
     {{- $shots := site.Params.portraits }}
@@ -34,7 +36,6 @@
       <div class="portrait placeholder">Photo slot 2 — waiting on the picture</div>
     {{- end }}
   </div>
-  <p><a href="{{ "about/" | relURL }}">About Fabio &rarr;</a></p>
 </section>
 
 {{/* --- The software it stewards --- */}}
