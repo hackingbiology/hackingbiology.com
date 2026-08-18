@@ -50,7 +50,7 @@ jobs:
           fi
 
       - name: Build
-        run: ./tools/build.sh "${{ steps.base.outputs.url }}"
+        run: bash ./tools/build.sh "${{ steps.base.outputs.url }}"
 
       - name: Verify nothing was lost
         run: |
