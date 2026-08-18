@@ -12,6 +12,13 @@
   {{- end }}
   {{- with .Description }}<p class="lede">{{ . }}</p>{{ end }}
 
+  {{- with .Params.image }}
+  <figure class="lead-image">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.imageAlt | default $.Title }}" loading="eager">
+    {{- with $.Params.imageCaption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{- end }}
+
   {{ .Content }}
 
   {{- if eq .Section "posts" }}

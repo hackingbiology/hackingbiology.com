@@ -202,6 +202,47 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13px}
   project rests on the Foundation sounding like it can be held to its word.</p>
 </section>
 
+<section>
+  <div class="num">08</div><div class="bar"></div>
+  <h2>Downloads</h2>
+  <p>Every mark on this page is vector (SVG, in <code>assets/</code>) and is also rendered as PNG
+  at several sizes, so anything that cannot take an SVG &mdash; a slide deck, a printed piece, a
+  form that only accepts PNG &mdash; still has a correct file to use.</p>
+  <table>
+    <tr><th>Mark</th><th>Ink</th><th>White</th></tr>
+    <tr><td>Steward ring <span class="teal">(in use)</span></td>
+      <td><a href="assets/mark.svg">SVG</a> &middot;
+          <a href="png/mark-steward-1024.png">1024</a> &middot;
+          <a href="png/mark-steward-512.png">512</a> &middot;
+          <a href="png/mark-steward-256.png">256</a> &middot;
+          <a href="png/mark-steward-128.png">128</a> &middot;
+          <a href="png/mark-steward-64.png">64</a> &middot;
+          <a href="png/mark-steward-32.png">32</a></td>
+      <td><a href="assets/mark-b-steward-white.svg">SVG</a> &middot;
+          <a href="png/mark-steward-white-512.png">512</a> &middot;
+          <a href="png/mark-steward-white-256.png">256</a></td></tr>
+    <tr><td>A &middot; The plinth</td>
+      <td><a href="assets/mark-a-plinth.svg">SVG</a> &middot;
+          <a href="png/mark-a-plinth-512.png">512</a> &middot;
+          <a href="png/mark-a-plinth-256.png">256</a></td>
+      <td><a href="assets/mark-a-plinth-white.svg">SVG</a> &middot;
+          <a href="png/mark-a-plinth-white-512.png">512</a></td></tr>
+    <tr><td>C &middot; The lock</td>
+      <td><a href="assets/mark-c-lock.svg">SVG</a> &middot;
+          <a href="png/mark-c-lock-512.png">512</a> &middot;
+          <a href="png/mark-c-lock-256.png">256</a></td>
+      <td><a href="assets/mark-c-lock-white.svg">SVG</a> &middot;
+          <a href="png/mark-c-lock-white-512.png">512</a></td></tr>
+    <tr><td>App / avatar icon</td>
+      <td colspan="2"><a href="png/hackingbiology-icon-512.png">512</a> &middot;
+          <a href="png/hackingbiology-icon-192.png">192</a> &middot;
+          <a href="png/hackingbiology-icon-180.png">180 (Apple touch)</a></td></tr>
+  </table>
+  <p style="font-size:14px;color:var(--muted)">PNGs are rendered from the SVG geometry by
+  <code>tools/render_brand_pngs.py</code>. If a mark's SVG changes, rerun that script so the PNGs
+  stay in sync &mdash; they are not hand-exported and will not update themselves.</p>
+</section>
+
 <footer><div class="wrap">
   Hacking Biology Foundation &middot; brand guidelines v0.1 &middot; derived from the biohack.it identity &middot;
   source in <code>static/brand/</code>

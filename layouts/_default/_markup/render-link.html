@@ -1,0 +1,6 @@
+{{- /* Any link that leaves this site opens in a new tab, so a reader following a
+     source (RaiPlay, YouTube, lifespan.io, rapamycin.news, biohack.it, ...) never
+     loses their place on this page. Internal links are untouched. */ -}}
+{{- $u := .Destination -}}
+{{- $external := and (strings.HasPrefix $u "http") (not (strings.HasPrefix $u site.BaseURL)) -}}
+<a href="{{ $u | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>

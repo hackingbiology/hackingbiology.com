@@ -1,11 +1,11 @@
 description = "The non-profit foundation stewarding biohack.it — open infrastructure for longevity research, kept open by design."
 
-# Social and canonical profiles. Used in the footer and in the Organization
-# structured data, so search engines can tie the sites together.
-# linkedin = "https://www.linkedin.com/company/..."   # TODO Fabio: fill in
+# Social and canonical profiles. Used in the footer and in the Organization /
+# Person structured data, so search engines can tie the sites together.
+linkedin = "https://www.linkedin.com/in/secret"
 github = "https://github.com/hackingbiology"
 
-sameAs = ["https://biohack.it", "https://github.com/hackingbiology"]
+sameAs = ["https://biohack.it", "https://github.com/hackingbiology", "https://www.linkedin.com/in/secret"]
 
 # Card image for shares on LinkedIn and X.
 defaultImage = "img/fabio-hbot-chamber.jpg"

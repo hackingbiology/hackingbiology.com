@@ -18,12 +18,12 @@
       <div>
         <h4>Elsewhere</h4>
         <ul>
-          <li><a href="https://biohack.it" rel="noopener">biohack.it — the software</a></li>
+          <li><a href="https://biohack.it" target="_blank" rel="noopener noreferrer">biohack.it — the software</a></li>
           {{- with site.Params.linkedin }}
-          <li><a href="{{ . }}" rel="noopener me">LinkedIn</a></li>
+          <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer me">LinkedIn</a></li>
           {{- end }}
           {{- with site.Params.github }}
-          <li><a href="{{ . }}" rel="noopener">GitHub</a></li>
+          <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           {{- end }}
           <li><a href="{{ "index.xml" | relURL }}">RSS feed</a></li>
         </ul>

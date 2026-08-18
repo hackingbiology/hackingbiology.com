@@ -1,0 +1,40 @@
+{{/* Click-to-play YouTube facade.
+
+     The thumbnail is served from this site and nothing is requested from Google
+     until the visitor actually chooses to watch — at which point the player is
+     loaded from youtube-nocookie.com. A site that asks people to trust it with a
+     health record should not silently hand their visit to a third party.
+
+     Usage: {{< youtube id="Amy7OyM7exo" title="..." thumb="img/video/Amy7OyM7exo.jpg" >}} */}}
+{{- $id := .Get "id" -}}
+{{- $title := .Get "title" | default "Watch the video" -}}
+{{- $thumb := .Get "thumb" | default (printf "img/video/%s.jpg" $id) -}}
+<figure class="video-embed">
+  <button type="button" class="video-facade" data-id="{{ $id }}"
+          aria-label="Play: {{ $title }}">
+    <img src="{{ $thumb | relURL }}" alt="" loading="lazy" width="480" height="360">
+    <span class="video-play" aria-hidden="true">
+      <svg viewBox="0 0 68 48" width="60" height="42">
+        <path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" fill="#25292c" fill-opacity=".82"/>
+        <path d="M27 34V14l18 10z" fill="#fff"/>
+      </svg>
+    </span>
+  </button>
+  <figcaption>{{ $title }} — plays from YouTube; nothing is loaded from Google until you press play.</figcaption>
+</figure>
+{{- if not (.Page.Scratch.Get "videoScript") }}
+{{- .Page.Scratch.Set "videoScript" true }}
+<script>
+document.addEventListener("click", function (e) {
+  var b = e.target.closest(".video-facade");
+  if (!b) return;
+  var f = document.createElement("iframe");
+  f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.id + "?autoplay=1&rel=0";
+  f.title = b.getAttribute("aria-label");
+  f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
+  f.allowFullscreen = true;
+  f.loading = "lazy";
+  b.replaceWith(f);
+});
+</script>
+{{- end }}

@@ -12,7 +12,7 @@
           {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
           <a href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
         {{- end }}
-        <a class="ext" href="https://biohack.it" rel="noopener">Biohack.it</a>
+        <a class="ext" href="https://biohack.it" target="_blank" rel="noopener noreferrer">Biohack.it</a>
       </span>
     </nav>
   </div>

@@ -48,7 +48,13 @@
 <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" (slice $org (dict
   "@type" "WebSite" "@id" (printf "%s#website" site.BaseURL) "url" site.BaseURL
   "name" site.Title "publisher" (dict "@id" (printf "%s#organization" site.BaseURL))))) | jsonify | safeJS }}</script>
-{{- else if .IsPage -}}
+{{- else if eq .RelPermalink ("about/" | relURL) -}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org"
+  "@type" "ProfilePage"
+  "mainEntity" (dict "@type" "Person" "name" "Fabio Pietrosanti" "url" .Permalink
+    "description" ($desc | plainify | chomp) "sameAs" (site.Params.sameAs | default slice))
+  "url" .Permalink) | jsonify | safeJS }}</script>
+{{- else if in (slice "posts" "news") .Section -}}
 <script type="application/ld+json">{{ (dict "@context" "https://schema.org"
   "@type" (cond (eq .Section "news") "NewsArticle" "BlogPosting")
   "headline" .Title

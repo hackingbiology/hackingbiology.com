@@ -195,6 +195,18 @@ section.block:first-of-type { border-top: 0; padding-top: 0 }
 
 article.page { max-width: var(--measure) }
 article.page img { border-radius: 10px; margin: 8px 0 }
+.video-embed { margin: 24px 0 26px }
+.video-embed iframe, .video-facade { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; display: block }
+.video-facade { position: relative; padding: 0; cursor: pointer; background: var(--surface-2); overflow: hidden; box-shadow: var(--shadow) }
+.video-facade img { width: 100%; height: 100%; object-fit: cover; display: block }
+.video-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center }
+.video-facade:hover .video-play svg path:first-child { fill-opacity: .95 }
+.video-embed figcaption { font-size: 13px; color: var(--faint); margin-top: 8px }
+
+.lead-image { margin: 22px 0 26px }
+.lead-image img { width: 100%; border-radius: 10px; display: block; box-shadow: var(--shadow) }
+.lead-image figcaption { font-size: 13px; color: var(--faint); margin-top: 8px }
+
 .page-meta { font-family: var(--ff-display); font-weight: 500; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 0 0 18px }
 .notice {
   border: 1px solid var(--line); border-left: 3px solid var(--accent);
