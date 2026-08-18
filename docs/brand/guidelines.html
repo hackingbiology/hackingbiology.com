@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hacking Biology Foundation — Brand Guidelines</title>
+<meta name="description" content="Visual identity of the Hacking Biology Foundation, and how it relates to the identity of biohack.it, the software it stewards.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#fafbfb; --surface-2:#f1f4f3;
+  --ink:#25292c; --muted:#59636a; --faint:#8b9398;
+  --line:rgba(37,41,44,.13);
+  --accent:#0c877a; --accent-fill:rgba(12,135,122,.08);
+  --ff-display:"Jost",system-ui,sans-serif;
+  --ff-body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ff-body);line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);padding:56px 0 30px;margin-bottom:44px}
+.eyebrow{font-family:var(--ff-display);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+h1{font-family:var(--ff-display);font-weight:300;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.01em;margin:10px 0 8px}
+h2{font-family:var(--ff-display);font-weight:400;font-size:clamp(22px,3vw,32px);margin:0 0 6px;letter-spacing:-.005em}
+h3{font-family:var(--ff-display);font-weight:500;font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+p{margin:0 0 15px;max-width:68ch}
+.lede{color:var(--muted);font-size:18px;max-width:64ch}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.num{font-family:var(--ff-display);font-weight:300;font-size:13px;letter-spacing:.16em;color:var(--faint)}
+.bar{height:8px;width:84px;background:var(--ink);border-radius:1.5px;margin:0 0 22px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:20px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--surface)}
+.card.pick{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-fill)}
+.card h4{font-family:var(--ff-display);font-weight:500;font-size:15px;letter-spacing:.05em;text-transform:uppercase;margin:0 0 4px}
+.card p{font-size:14px;color:var(--muted);margin:0}
+.sizes{display:flex;align-items:flex-end;gap:16px;margin:14px 0 16px;min-height:66px}
+.lockup{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-display);font-weight:300;font-size:21px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.tag{display:block;font-family:var(--ff-display);font-weight:500;font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.sw{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.sw i{display:block;height:56px}
+.sw b{font-family:var(--ff-display);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:8px 10px 2px}
+.sw span{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted);padding:0 10px 9px}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--ff-display);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:var(--surface-2);padding:1px 5px;border-radius:4px}
+.do,.dont{font-size:14px;margin:0 0 6px;padding-left:20px;position:relative;color:var(--muted)}
+.do:before{content:"—";position:absolute;left:0;color:var(--accent)}
+.dont:before{content:"\00d7";position:absolute;left:0;color:#b3402f}
+footer{padding:34px 0 60px;color:var(--faint);font-size:13px}
+.teal{color:var(--accent)}
+.row{display:flex;gap:34px;flex-wrap:wrap;align-items:center;margin-top:14px}
+</style></head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Brand guidelines &middot; v0.1 &middot; August 2026</div>
+  <h1>Hacking Biology Foundation</h1>
+  <p class="lede">The visual identity of the Foundation, and how it stays recognisably related to
+  <span class="teal">biohack.it</span> &mdash; the software it stewards &mdash; without being mistaken for it.</p>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <div class="num">01</div><div class="bar"></div>
+  <h2>Two identities, one family</h2>
+  <p>The Foundation and the software are not two brands competing for attention. They are two roles
+  in one story, and the identity should make the roles legible at a glance.</p>
+  <table>
+    <tr><th>&nbsp;</th><th>biohack.it</th><th>Hacking Biology Foundation</th></tr>
+    <tr><td><b>What it is</b></td><td>The software and the initiative</td><td>The non-profit that stewards it</td></tr>
+    <tr><td><b>Speaks to</b></td><td>Biohackers, the community</td><td>Institutions, researchers, funders, clinicians</td></tr>
+    <tr><td><b>Register</b></td><td>Open lab &mdash; hands-on, in motion</td><td>Steward &mdash; sober, accountable, permanent</td></tr>
+    <tr><td><b>Colour</b></td><td>Teal as the working signal colour</td><td>Ink-first; teal appears when pointing at biohack.it</td></tr>
+    <tr><td><b>Type</b></td><td>Jost + system sans</td><td>Identical &mdash; the family bond</td></tr>
+  </table>
+  <p>The rule that carries the whole system: <b>shared skeleton, different weight.</b> Same ring,
+  same bar, same Jost, same ink. The Foundation simply uses them more quietly, and reserves the
+  teal for the moments it refers to the thing it protects.</p>
+</section>
+
+<section>
+  <div class="num">02</div><div class="bar"></div>
+  <h2>The mark &mdash; three directions</h2>
+  <p>biohack.it's mark is <b>the ring and the bar</b>: the round <i>O</i> of bi<b>O</b>, also a cell,
+  paired with the bar of hacking &mdash; the cut. The Foundation's mark must be born from the same two
+  shapes, or the family breaks. Three ways to do that, to be chosen:</p>
+
+  <div class="grid">
+    <div class="card">
+      <h4>A &middot; The plinth</h4>
+      <div class="sizes">
+        <img src="assets/mark-a-plinth.svg" width="16" alt="Direction A at 16 pixels">
+        <img src="assets/mark-a-plinth.svg" width="32" alt="Direction A at 32 pixels">
+        <img src="assets/mark-a-plinth.svg" width="56" alt="Direction A at 56 pixels">
+      </div>
+      <p>The bar widens into a base and the ring rests on it. Reads literally as
+      <i>foundation</i>: the thing that holds. The most legible of the three at favicon size.</p>
+    </div>
+    <div class="card pick">
+      <h4>B &middot; The steward ring <span class="teal">&middot; suggested</span></h4>
+      <div class="sizes">
+        <img src="assets/mark-b-steward.svg" width="16" alt="Direction B at 16 pixels">
+        <img src="assets/mark-b-steward.svg" width="32" alt="Direction B at 32 pixels">
+        <img src="assets/mark-b-steward.svg" width="56" alt="Direction B at 56 pixels">
+      </div>
+      <p>biohack.it's ring-and-bar, enclosed by a second ring. The Foundation is drawn as
+      what surrounds and protects the thing it stewards &mdash; the mission lock, as a shape.</p>
+    </div>
+    <div class="card">
+      <h4>C &middot; The lock</h4>
+      <div class="sizes">
+        <img src="assets/mark-c-lock.svg" width="16" alt="Direction C at 16 pixels">
+        <img src="assets/mark-c-lock.svg" width="32" alt="Direction C at 32 pixels">
+        <img src="assets/mark-c-lock.svg" width="56" alt="Direction C at 56 pixels">
+      </div>
+      <p>The bar passes through the ring and closes it. The most graphic of the three, and the
+      most assertive &mdash; arguably too assertive for an institution.</p>
+    </div>
+  </div>
+
+  <h3>Side by side with the sibling</h3>
+  <div class="row">
+    <span class="lockup"><img src="assets/mark-biohackit.svg" width="26" alt="">Biohack.it</span>
+    <span class="lockup"><img src="assets/mark-a-plinth.svg" width="26" alt="">Hacking Biology</span>
+    <span class="lockup"><img src="assets/mark-b-steward.svg" width="26" alt="">Hacking Biology</span>
+    <span class="lockup"><img src="assets/mark-c-lock.svg" width="26" alt="">Hacking Biology</span>
+  </div>
+</section>
+
+<section>
+  <div class="num">03</div><div class="bar"></div>
+  <h2>Lockup</h2>
+  <p>The Foundation's wordmark is <b>HACKING BIOLOGY</b> in Jost Light, uppercase, tracked
+  <code>.04em</code>, with the mark to its left at cap height. The word <i>Foundation</i> is a
+  tagline, not part of the wordmark &mdash; set in Jost Medium, tracked <code>.18em</code>, uppercase,
+  at roughly half the wordmark size.</p>
+  <div class="row" style="margin:22px 0 8px">
+    <span class="lockup"><img src="assets/mark-b-steward.svg" width="30" alt="">
+      <span>Hacking Biology<span class="tag">Foundation</span></span></span>
+  </div>
+  <h3>Rules</h3>
+  <p class="do">Clear space of at least the cap height on every side.</p>
+  <p class="do">Minimum width 120&nbsp;px on screen; below that, the mark alone.</p>
+  <p class="do">Ink on paper, or white on ink. Never teal on teal.</p>
+  <p class="dont">Never stretch, rotate, outline, or add effects.</p>
+  <p class="dont">Never rebuild the tagline in another typeface.</p>
+  <p class="dont">Never place the lockup on a photograph without a solid panel behind it.</p>
+</section>
+
+<section>
+  <div class="num">04</div><div class="bar"></div>
+  <h2>Colour</h2>
+  <p>The palette is inherited from biohack.it without a single change &mdash; that is the point. What
+  changes is the <b>proportion</b>: the Foundation is monochrome by default, and teal is spent
+  sparingly, on links and on references to biohack.it.</p>
+  <div class="grid">
+    <div class="sw"><i style="background:#25292c"></i><b>Ink</b><span>#25292C</span></div>
+    <div class="sw"><i style="background:#ffffff;border-bottom:1px solid var(--line)"></i><b>Paper</b><span>#FFFFFF</span></div>
+    <div class="sw"><i style="background:#f1f4f3"></i><b>Surface</b><span>#F1F4F3</span></div>
+    <div class="sw"><i style="background:#0c877a"></i><b>Signal teal</b><span>#0C877A</span></div>
+  </div>
+  <p style="font-size:14px;color:var(--muted)">Supporting greys: muted <code>#59636A</code> for
+  secondary text, faint <code>#8B9398</code> for metadata, hairlines at
+  <code>rgba(37,41,44,.13)</code>. Body text always keeps at least 4.5:1 contrast.</p>
+</section>
+
+<section>
+  <div class="num">05</div><div class="bar"></div>
+  <h2>Typography</h2>
+  <table>
+    <tr><th>Role</th><th>Face</th><th>Setting</th></tr>
+    <tr><td>Wordmark, display</td><td>Jost 300</td><td>Uppercase, tracked .04em</td></tr>
+    <tr><td>Headings</td><td>Jost 400</td><td>Sentence case, tight leading</td></tr>
+    <tr><td>Eyebrows, labels, nav</td><td>Jost 500</td><td>Uppercase, tracked .09&ndash;.18em</td></tr>
+    <tr><td>Body</td><td>System sans</td><td>Long-form legibility over character</td></tr>
+    <tr><td>Technical</td><td>Mono</td><td>Identifiers, licences, standards only</td></tr>
+  </table>
+</section>
+
+<section>
+  <div class="num">06</div><div class="bar"></div>
+  <h2>Graphic language</h2>
+  <p><b>The bar</b> is the signature device, exactly as on biohack.it: section openers, dividers,
+  the baseline under a heading. It is always ink, always the same 8&nbsp;px weight, never decorative.</p>
+  <p><b>Navigation</b> is static and typographic: a sticky hairline-bordered bar, the lockup on the
+  left, uppercase Jost links on the right. No dropdowns, no hamburger animation, no colour on hover
+  beyond the teal underline. The site should feel like a document, not an app.</p>
+  <p><b>Photography</b> is used only where a person is involved &mdash; the Foundation is a human project,
+  and the blog is written by a named individual. Photographs are never decorative fills.</p>
+</section>
+
+<section>
+  <div class="num">07</div><div class="bar"></div>
+  <h2>Voice</h2>
+  <p>biohack.it says <i>transparent, open, scientific, human</i>. The Foundation adds one word:
+  <b>accountable</b>. It speaks in plain declaratives, publishes what it cannot guarantee as
+  readily as what it can, and never uses the promotional register &mdash; the credibility of the whole
+  project rests on the Foundation sounding like it can be held to its word.</p>
+</section>
+
+<footer><div class="wrap">
+  Hacking Biology Foundation &middot; brand guidelines v0.1 &middot; derived from the biohack.it identity &middot;
+  source in <code>static/brand/</code>
+</div></footer>
+</div>
+</body></html>
