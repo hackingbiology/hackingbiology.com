@@ -1,0 +1,23 @@
+# The navigation menu. On WordPress this never existed: the visible
+# About / Home / Contact items were the theme's placeholders and all
+# pointed at "#". This is the first real menu the site has had.
+
+[[main]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 20
+
+[[footer]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 10
+
+[[footer]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 20

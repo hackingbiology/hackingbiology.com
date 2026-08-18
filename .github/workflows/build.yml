@@ -1,0 +1,82 @@
+# Rebuilds the site whenever content or configuration changes, and commits the
+# result to /docs — which is where GitHub Pages serves from.
+#
+# This is what makes editing possible from the GitHub web UI (or any Markdown
+# editor that commits): change a file under content/, and the published site
+# follows a minute later without anyone running Hugo locally.
+
+name: Build site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'          # the build's own output must not retrigger the build
+      - 'notes/**'
+      - 'README.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.163.1        # pinned: the version the migration was verified with
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo (extended)
+        run: |
+          curl -sSL -o hugo.deb \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+          hugo version
+
+      - name: Work out the base URL
+        id: base
+        run: |
+          # A custom domain lives in static/CNAME (Hugo copies it into docs/ on
+          # every build). Until it exists, build for the github.io preview URL.
+          if [ -f static/CNAME ]; then
+            echo "url=https://$(tr -d '[:space:]' < static/CNAME)/" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build
+        run: ./tools/build.sh "${{ steps.base.outputs.url }}"
+
+      - name: Verify nothing was lost
+        run: |
+          # The backup is not in the repo (it holds unpublished drafts), so the
+          # full parity check runs locally. Here we assert the essentials.
+          test -f docs/index.html
+          test -f docs/feed/index.xml
+          test -f docs/.nojekyll
+          for u in 2023/07/09/a-data-driven-applied-aging-research-project \
+                   2024/01/07/software-review \
+                   2024/07/19/project-update-july-2024 \
+                   2024/07/20/glucose-and-rapamycin-for-anti-aging \
+                   2024/07/20/hbot-protocol-protoco \
+                   2024/12/15/measurements-of-biological-age \
+                   2025/01/01/many-protocols-for-many-pills \
+                   2025/01/13/increasing-oxygen-while-sleeping \
+                   2025/03/16/nutritional-epigenetic \
+                   2025/08/14/pills-management ; do
+            test -f "docs/$u/index.html" || { echo "URL storico perso: /$u/"; exit 1; }
+          done
+          echo "10/10 URL WordPress presenti"
+
+      - name: Commit the built site
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --staged --quiet || git commit -m "Rebuild site [skip ci]"
+          git push

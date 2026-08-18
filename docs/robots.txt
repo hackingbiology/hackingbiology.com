@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hackingbiology.github.io/hackingbiology.com/sitemap.xml

@@ -13,3 +13,7 @@ site-backup*/
 .DS_Store
 __pycache__/
 *.pyc
+
+# local preview output (never commit: dev builds carry "Disallow: /")
+.hugo-preview/
+.hugo_build.lock
