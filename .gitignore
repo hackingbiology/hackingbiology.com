@@ -1,0 +1,15 @@
+# Secrets — never commit. Credentials live in %USERPROFILE%\.hackingbiology\
+*.env
+token.json
+wpcom.env
+
+# Site backups: contain unpublished drafts and the admin email.
+# Kept outside the repo, in C:\Users\admin\hackingbiology-refs\
+backup/
+site-backup*/
+*.wxr
+
+# Local noise
+.DS_Store
+__pycache__/
+*.pyc
