@@ -161,7 +161,7 @@ section.block:first-of-type { border-top: 0; padding-top: 0 }
 .person { display: grid; gap: 34px; grid-template-columns: minmax(0, 56ch) minmax(0, 1fr); align-items: start }
 .person h2 { margin-top: 0 }
 
-.portraits { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin: 0 }
+.portraits { display: grid; gap: 12px; grid-template-columns: 1fr; max-width: 260px; margin: 0 }
 .portrait { margin: 0; min-width: 0 }
 .portrait img {
   width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 42%;

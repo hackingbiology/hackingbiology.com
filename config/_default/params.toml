@@ -10,14 +10,9 @@ sameAs = ["https://biohack.it", "https://github.com/hackingbiology", "https://ww
 # Card image for shares on LinkedIn and X.
 defaultImage = "img/fabio-hbot-chamber.jpg"
 
-# Portraits on the home page. Photography is used only where a person is
+# Portrait on the home page. Photography is used only where a person is
 # involved — see the brand guidelines.
 [[portraits]]
   src = "img/fabio-hbot-chamber.jpg"
   alt = "Fabio Pietrosanti sitting inside his hyperbaric chamber, which carries the BIOHACK.IT logo"
   caption = "The 2.0 ATA chamber at home — HBOT, protocol and safety procedure included."
-
-[[portraits]]
-  src = "img/fabio-beach.jpg"
-  alt = "Fabio Pietrosanti at the seaside, flexing, in orange swim shorts and yellow slides"
-  caption = "The other half of applied longevity research."

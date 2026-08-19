@@ -3,7 +3,7 @@ title: "About Fabio"
 eyebrow: "The person behind the project"
 description: "Fabio Pietrosanti: a seasoned hacker and entrepreneur across cybersecurity, transparency, anti-corruption, logistics and AI trading, now applying the same open-source, radical-open-data method to longevity with Hacking Biology."
 date: 2026-08-18
-image: "img/fabio-hbot-chamber.jpg"
+image: "img/fabio-portrait.jpg"
 keywords: ["Fabio Pietrosanti", "naif", "hacker", "cybersecurity entrepreneur", "GlobaLeaks", "Hermes Center", "PrivateWave", "open source", "open data", "longevity", "Hacking Biology"]
 ---
 
@@ -55,10 +55,9 @@ research can build on it instead of on a spreadsheet nobody else will ever see. 
 Foundation](/foundation/) is that intention turned into an institution that can be held to it.
 
 <figure>
-  <img src="/img/fabio-hbot-chamber.jpg"
-       alt="Fabio Pietrosanti sitting inside his hyperbaric chamber, which carries the BIOHACK.IT logo"
-       width="1200" height="1600" loading="lazy">
-  <figcaption>The 2.0 ATA chamber at home.</figcaption>
+  <img src="/img/fabio-portrait.jpg"
+       alt="Portrait of Fabio Pietrosanti"
+       width="1024" height="1536" loading="lazy">
 </figure>
 
 ## Elsewhere
