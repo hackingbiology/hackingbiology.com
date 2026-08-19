@@ -50,6 +50,12 @@ without monitoring, and they deserve better than a forum thread.
 project whose work is reused is attributed and notified: this project is a connector of other
 people's effort, not a silent consumer of it.
 
+**Evidence language is earned.** The word *distributed trial* is used only for work that clears a
+published bar — a pre-registered endpoint, a shared protocol version, declared timepoints, an
+adherence floor, a minimum cohort, a published analysis plan. Short of that, a result is reported
+as a self-experiment or a cohort observation, and called that plainly. The platform reports what
+was *observed*, never what *caused* it.
+
 **Data belongs to the person.** Full export, always. The individual owns the record, not the
 platform.
 
@@ -61,7 +67,9 @@ canonical instance, and the guarantee of everything above.
 **The board is a basket of biohackers and software hackers** — practitioners of the domain and
 builders of the tool — composed so the project stays impartial and on-mission over time. Mixing
 the two makes both capture and drift harder: the biohackers hold it to the community's needs, the
-hackers hold it to open, verifiable engineering.
+hackers hold it to open, verifiable engineering. **Composition and the first seats are not yet
+named** — said here rather than left implicit, because a board you claim before you have it is
+worse than no board at all.
 
 Development is directed by the Foundation with an open contributor community; architecture
 decisions and specifications are public from day one. Community governance attaches to the
@@ -89,6 +97,8 @@ Stating the failure modes is part of being accountable for them.
 | Capture of the canonical instance | Full clonability and self-hosting — the community can always leave and take the data |
 | Regulatory qualification as a medical device | Descriptive-not-prescriptive posture by design; legal review before public launch |
 | Jurisdiction versus data protection | Próspera seat for the entity; user data protection handled at the hosting layer |
+| Statistical rigour lagging the data model | A public evidence hierarchy and an observed-not-caused phrasing rule; a dedicated statistical-methodology specification is in progress, not yet done |
+| Genomics shared publicly by default | A heightened consent gate before publishing — identifiability, relatives, irreversibility, spelled out — and the decision itself put to the community at public beta |
 
 ## Two sites, two jobs
 
