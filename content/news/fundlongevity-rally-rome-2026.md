@@ -3,8 +3,7 @@ title: "Hacking Biology at the Fund Longevity rally in Rome"
 date: 2026-04-08
 slug: fundlongevity-rally-rome-2026
 description: "Hacking Biology took part in the global Fund Longevity rally on 8 April 2026, at Largo di Torre Argentina in Rome — one of twenty cities asking governments to treat aging as the public-health priority it is."
-# TODO Fabio: drop the rally photo in static/img/news/ and uncomment
-# image: "img/news/fundlongevity-rome-2026.jpg"
+image: "img/news/fundlongevity-rome-2026.jpg"
 imageAlt: "Participants at the Fund Longevity rally in Rome holding signs reading STOP AGING, AGING KILLS 110,000 PEOPLE/DAY and 1% del PIL per la longevità"
 imageCaption: "Largo di Torre Argentina, Rome — 8 April 2026."
 keywords: ["Fund Longevity", "longevity advocacy", "Rome rally", "Largo Argentina", "aging research funding", "Longevity State"]
