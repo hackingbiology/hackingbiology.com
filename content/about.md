@@ -7,6 +7,9 @@ image: "img/fabio-hbot-chamber.jpg"
 keywords: ["Fabio Pietrosanti", "naif", "hacker", "cybersecurity entrepreneur", "GlobaLeaks", "Hermes Center", "PrivateWave", "open source", "open data", "longevity", "Hacking Biology"]
 ---
 
+*While a board of biohackers and stakeholders is being formed, here is who is behind how the
+project started.*
+
 **Fabio Pietrosanti** — online as **naif** — started Hacking Biology, and writes everything on
 this blog. He has spent close to thirty years building things people have to be able to trust,
 across a run of companies and non-profits that keeps landing in the same place: take a domain
